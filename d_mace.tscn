@@ -1,0 +1,188 @@
+[gd_scene load_steps=2 format=3 uid="uid://yumm2tk7ow7h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nr3qf"]
+blend_mode = 1
+albedo_color = Color(0.709804, 0.231373, 0.231373, 1)
+metallic_specular = 1.0
+
+[node name="d_mace" type="Node3D"]
+rotation_edit_mode = 2
+
+[node name="aa" type="CSGCombiner3D" parent="."]
+
+[node name="a" type="CSGCylinder3D" parent="aa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 64
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="aa/a"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="bb" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="b" type="CSGCylinder3D" parent="bb"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 128
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="bb/b"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="cc" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="c" type="CSGCylinder3D" parent="cc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 256
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="cc/c"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="dd" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="d" type="CSGCylinder3D" parent="dd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 512
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="dd/d"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="ee" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="e" type="CSGCylinder3D" parent="ee"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 64
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="ee/e"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="ff" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-0.866025, 0.5, 0, -0.5, -0.866025, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="f" type="CSGCylinder3D" parent="ff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 128
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="ff/f"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="gg" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="g" type="CSGCylinder3D" parent="gg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 256
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="gg/g"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="hh" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-0.866025, -0.5, 0, 0.5, -0.866025, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="h" type="CSGCylinder3D" parent="hh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 512
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="hh/h"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="ii" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="i" type="CSGCylinder3D" parent="ii"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 64
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="ii/i"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="jj" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="j" type="CSGCylinder3D" parent="jj"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 128
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="jj/j"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="kk" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="k" type="CSGCylinder3D" parent="kk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 256
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="kk/k"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544
+
+[node name="ll" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="l" type="CSGCylinder3D" parent="ll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 512
+radius = 0.125
+smooth_faces = false
+material = SubResource("StandardMaterial3D_nr3qf")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="ll/l"]
+layers = 960
+size = Vector3(0.25, 2, 0.25)
+cull_mask = 1048544

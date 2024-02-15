@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu1e7l13md85"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1itc"]
+
+[node name="b_sink" type="Node3D"]
+
+[node name="white" type="CSGSphere3D" parent="."]
+layers = 32
+ignore_occlusion_culling = true
+flip_faces = true
+radius = 0.1
+material = SubResource("StandardMaterial3D_f1itc")
+
+[node name="light" type="OmniLight3D" parent="."]
+light_energy = 2.5
+light_size = 1.0
+light_bake_mode = 0
+light_cull_mask = 4294967264
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 12.0
+distance_fade_length = 24.0
+omni_range = 6.25
+omni_shadow_mode = 0

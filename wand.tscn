@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg4twj2l0fmne"]
+
+[ext_resource type="PackedScene" uid="uid://kaxodjq6hbox" path="res://d_second.tscn" id="1_20nw8"]
+[ext_resource type="Script" path="res://wand.gd" id="1_jbwog"]
+[ext_resource type="PackedScene" uid="uid://yumm2tk7ow7h" path="res://d_mace.tscn" id="3_r6jw6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8duu7"]
+albedo_color = Color(0.0588235, 0.239216, 0.0588235, 0.690196)
+
+[sub_resource type="QuadMesh" id="QuadMesh_qfkdo"]
+material = SubResource("StandardMaterial3D_8duu7")
+size = Vector2(20, 10)
+
+[node name="wand" type="Node3D"]
+script = ExtResource("1_jbwog")
+
+[node name="d_second" parent="." instance=ExtResource("1_20nw8")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+size = 10.0
+far = 25.0
+
+[node name="back_mesh" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, -0.353553, 0.866025, 0.353553, -0.612372, -0.5, 0.612372, -2.5, 0, 0)
+layers = 32
+
+[node name="back" type="CSGMesh3D" parent="back_mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+layers = 32
+mesh = SubResource("QuadMesh_qfkdo")
+
+[node name="back2" type="CSGMesh3D" parent="back_mesh"]
+transform = Transform3D(0, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 0, 0, 5, 5, 4)
+layers = 32
+mesh = SubResource("QuadMesh_qfkdo")
+
+[node name="back3" type="CSGMesh3D" parent="back_mesh"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 10, -5, -1)
+layers = 32
+mesh = SubResource("QuadMesh_qfkdo")
+
+[node name="d_mace" parent="." instance=ExtResource("3_r6jw6")]
+
+[node name="lasub" type="Timer" parent="."]
+
+[node name="landsink" type="Timer" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+layers = 1008
+light_color = Color(0.0588235, 0.239216, 0.0588235, 1)
+light_negative = true
+light_cull_mask = 4294966304
+
+[connection signal="timeout" from="lasub" to="." method="_on_lasub_timeout"]
+[connection signal="timeout" from="landsink" to="." method="_on_landsink_timeout"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cykwdpw7lilgj"]
+
+[ext_resource type="Script" path="res://sink.gd" id="1_xipgv"]
+[ext_resource type="PackedScene" uid="uid://bu1e7l13md85" path="res://b_sink.tscn" id="2_3l6h6"]
+
+[node name="sink" type="Node3D"]
+script = ExtResource("1_xipgv")
+
+[node name="middle" type="Marker3D" parent="."]
+
+[node name="b_sink" parent="middle" instance=ExtResource("2_3l6h6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
