@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg4twj2l0fmne"]
+[gd_scene load_steps=7 format=3 uid="uid://dg4twj2l0fmne"]
 
 [ext_resource type="PackedScene" uid="uid://kaxodjq6hbox" path="res://d_second.tscn" id="1_20nw8"]
 [ext_resource type="Script" path="res://wand.gd" id="1_jbwog"]
@@ -10,6 +10,11 @@ albedo_color = Color(0.0588235, 0.239216, 0.0588235, 0.690196)
 [sub_resource type="QuadMesh" id="QuadMesh_qfkdo"]
 material = SubResource("StandardMaterial3D_8duu7")
 size = Vector2(20, 10)
+
+[sub_resource type="Environment" id="Environment_bm414"]
+background_mode = 2
+volumetric_fog_density = 0.01
+volumetric_fog_length = 6.0
 
 [node name="wand" type="Node3D"]
 script = ExtResource("1_jbwog")
@@ -25,10 +30,11 @@ far = 25.0
 [node name="back_mesh" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, -0.353553, 0.866025, 0.353553, -0.612372, -0.5, 0.612372, -2.5, 0, 0)
 layers = 32
+gi_mode = 0
 
 [node name="back" type="CSGMesh3D" parent="back_mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
-layers = 32
+layers = 33
 mesh = SubResource("QuadMesh_qfkdo")
 
 [node name="back2" type="CSGMesh3D" parent="back_mesh"]
@@ -47,11 +53,20 @@ mesh = SubResource("QuadMesh_qfkdo")
 
 [node name="landsink" type="Timer" parent="."]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bm414")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-layers = 1008
+layers = 32
 light_color = Color(0.0588235, 0.239216, 0.0588235, 1)
+light_energy = 0.5
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 light_negative = true
+light_bake_mode = 0
 light_cull_mask = 4294966304
+directional_shadow_mode = 0
+sky_mode = 1
 
 [connection signal="timeout" from="lasub" to="." method="_on_lasub_timeout"]
 [connection signal="timeout" from="landsink" to="." method="_on_landsink_timeout"]

@@ -1,7 +1,31 @@
 extends Node3D
-var trunk = 0
+func _ready():
+	$sink/middle.rotate_y(PI/1 + (-PI/1))
+	$sink2/middle.rotate_y(PI/3.5)
+	$sink3/middle.rotate_y(PI/3.5 * 2)
+	$sink4/middle.rotate_y(PI/3.5 * 3)
+	$sink5/middle.rotate_y(PI/3.5 * 4)
+	$sink6/middle.rotate_y(PI/3.5 * 5)
+	$sink7/middle.rotate_y(PI/3.5 * 6)
 func _process(_delta):
-	if trunk > 0:
-		$SubViewport/wand/d_second/sink/middle.rotate_y(-PI/180)
-func _on_timer_timeout():
-	trunk += 60
+	$sink/middle.rotate_object_local(Vector3(0.0, 0.0, 1.0), PI/540)
+	$sink2/middle.rotate_object_local(Vector3(0.0, 0.0, 1.0), PI/540)
+	$sink3/middle.rotate_object_local(Vector3(0.0, 0.0, 1.0), PI/540)
+	$sink4/middle.rotate_object_local(Vector3(0.0, 0.0, 1.0), PI/540)
+	$sink5/middle.rotate_object_local(Vector3(0.0, 0.0, 1.0), PI/540)
+	$sink6/middle.rotate_object_local(Vector3(0.0, 0.0, 1.0), PI/540)
+	$sink7/middle.rotate_object_local(Vector3(0.0, 0.0, 1.0), PI/540)
+	$sink/middle.rotate_x(PI/540)
+	$sink2/middle.rotate_x(PI/540)
+	$sink3/middle.rotate_x(PI/540)
+	$sink4/middle.rotate_x(PI/540)
+	$sink5/middle.rotate_x(PI/540)
+	$sink6/middle.rotate_x(PI/540)
+	$sink7/middle.rotate_x(PI/540)
+	$sink/middle.rotate_y(PI/540)
+	$sink2/middle.rotate_y(PI/540)
+	$sink3/middle.rotate_y(PI/540)
+	$sink4/middle.rotate_y(PI/540)
+	$sink5/middle.rotate_y(PI/540)
+	$sink6/middle.rotate_y(PI/540)
+	$sink7/middle.rotate_y(PI/540)
